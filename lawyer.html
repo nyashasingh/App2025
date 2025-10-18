@@ -9,8 +9,6 @@
 
   <h1>Lawyers in North Carolina</h1>
 
-  <!-- Your existing content here -->
-
   <!-- Filter Section -->
   <div>
     <label for="languageFilter">Language:</label>
@@ -71,54 +69,56 @@
   </div>
 
   <script>
-    function filterLawyers(){
-        var language = lawyer.getElementById('data-language').toLowerCase();
-        var service = lawyer.getElementById('data-service').toLowerCase();
-        var location = lawyer.getElementById('data-location').toLowerCase();
+    function filterLawyers() {
+        // Get the selected filter values
+        var languageFilter = document.getElementById('languageFilter').value.toLowerCase();
+        var serviceFilter = document.getElementById('serviceFilter').value.toLowerCase();
+        var locationFilter = document.getElementById('locationFilter').value.toLowerCase();
 
+        // Get all lawyer elements
         var lawyers = document.querySelectorAll('.lawyer');
 
+        // Loop through each lawyer and check if they match the selected filters
         lawyers.forEach(function(lawyer) {
-        // Get the data attributes for each lawyer
-        var lawyerLanguage = lawyer.getAttribute('data-language').toLowerCase();
-        var lawyerService = lawyer.getAttribute('data-service').toLowerCase();
-        var lawyerLocation = lawyer.getAttribute('data-location').toLowerCase();
+            // Get the data attributes for each lawyer
+            var lawyerLanguage = lawyer.getAttribute('data-language').toLowerCase();
+            var lawyerService = lawyer.getAttribute('data-service').toLowerCase();
+            var lawyerLocation = lawyer.getAttribute('data-location').toLowerCase();
 
-        // Check if the lawyer matches the selected filters
-        if (
-          (languageFilter === 'all' || lawyerLanguage === languageFilter) &&
-          (serviceFilter === 'all' || lawyerService === serviceFilter) &&
-          (locationFilter === 'all' || lawyerLocation === locationFilter)
-        ) {
-          // Show the lawyer if they match
-          lawyer.style.display = '';
-        } else {
-          // Hide the lawyer if they don't match
-          lawyer.style.display = 'none';
-        }
-      });
+            // Check if the lawyer matches the selected filters
+            if (
+                (languageFilter === 'all' || lawyerLanguage === languageFilter) &&
+                (serviceFilter === 'all' || lawyerService === serviceFilter) &&
+                (locationFilter === 'all' || lawyerLocation === locationFilter)
+            ) {
+                // Show the lawyer if they match the filters
+                lawyer.style.display = '';
+            } else {
+                // Hide the lawyer if they don't match the filters
+                lawyer.style.display = 'none';
+            }
+        });
     }
 
-    //Add event listeners for each filter
+    // Add event listeners for each filter dropdown
     document.getElementById('languageFilter').addEventListener('change', filterLawyers);
     document.getElementById('serviceFilter').addEventListener('change', filterLawyers);
     document.getElementById('locationFilter').addEventListener('change', filterLawyers);
 
     // Reset filters function
     function resetFilters() {
-      //Reset all dropdowns
-      document.getElementById('languageFilter').value = 'all';
-      document.getElementById('serviceFilter').value = 'all';
-      document.getElementById('locationFilter').value = 'all';
+        // Reset all dropdowns
+        document.getElementById('languageFilter').value = 'all';
+        document.getElementById('serviceFilter').value = 'all';
+        document.getElementById('locationFilter').value = 'all';
 
-      //Show all
-      var lawyers = document.querySelectorAll('.lawyer');
-      lawyers.forEach(function(lawyer) {
-        lawyer.style.display = '';
-      });
+        // Show all lawyers
+        var lawyers = document.querySelectorAll('.lawyer');
+        lawyers.forEach(function(lawyer) {
+            lawyer.style.display = '';
+        });
     }
   </script>
 
 </body>
-
 </html>

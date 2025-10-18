@@ -9,6 +9,54 @@
 
   <h1>Lawyers in North Carolina</h1>
 
+  <!-- Your existing content here -->
+
+  <!-- Filter Section -->
+  <div>
+    <label for="languageFilter">Language:</label>
+    <select id="languageFilter">
+      <option value="all">All Languages</option>
+      <option value="english">English</option>
+      <option value="spanish">Spanish</option>
+      <option value="hindi">Hindi</option>
+      <option value="arabic">Arabic</option>
+    </select>
+
+    <label for="serviceFilter">Pro bono / Low-cost:</label>
+    <select id="serviceFilter">
+      <option value="all">Pro bono / Low-cost</option>
+      <option value="proBono">Pro Bono</option>
+      <option value="lowCost">Low-Cost</option>
+    </select>
+
+    <label for="locationFilter">Location:</label>
+    <select id="locationFilter">
+      <option value="all">All Locations</option>
+      <option value="raleigh">Raleigh, NC</option>
+      <option value="charlotte">Charlotte, NC</option>
+      <option value="durham">Durham, NC</option>
+    </select>
+
+    <!-- Reset Filters Link -->
+    <a href="#" onclick="resetFilters()">Reset Filters</a>
+  </div>
+
+  <div>
+    <span>104 Lawyers Match Your Criteria</span>
+  </div>
+
+  <script>
+    function resetFilters() {
+      // Reset filters to "all"
+      document.getElementById('languageFilter').value = 'all';
+      document.getElementById('serviceFilter').value = 'all';
+      document.getElementById('locationFilter').value = 'all';
+
+      // Update results display text
+      document.querySelector('div > span').innerText = '104 Lawyers Match Your Criteria';
+    }
+  </script>
+
   <div class="lawyer">
     <h2>HSD Immigration LLC</h2>
     <p><strong>Location:</strong> Raleigh, NC</p>

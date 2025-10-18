@@ -6,12 +6,14 @@
   <title>Lawyers in North Carolina</title>
 
   <style>
+    /* Styling for the lawyer boxes */
     .lawyer {
-      background-color:#fff;
+      background-color: #fff;
       border: 1px solid #a20b0b;
       padding: 20px;
       margin-bottom: 20px;
-      width: 300px;
+      width: 90%;
+      max-width: 300px;
       margin: 10px auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -49,7 +51,7 @@
     </select>
 
     <!-- Reset Filters Link -->
-    <a href="#" onclick="resetFilters()">Reset Filters</a>
+    <a href="#" id="resetFiltersLink" onclick="resetFilters()">Reset Filters</a>
   </div>
 
   <!-- Lawyer Results Section -->
@@ -80,17 +82,6 @@
     <p><strong>Languages spoken:</strong> English, Spanish</p>
     <p><strong>Services:</strong> Low-cost immigration services.</p>
   </div>
-
-  .lawyer {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 300px;
-  margin: 10px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
   <script>
     function filterLawyers() {

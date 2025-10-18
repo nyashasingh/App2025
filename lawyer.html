@@ -41,66 +41,83 @@
     <a href="#" onclick="resetFilters()">Reset Filters</a>
   </div>
 
-  <div>
-    <span>104 Lawyers Match Your Criteria</span>
+  <!-- Lawyer Results Section -->
+  <div class="lawyer" data-language="english" data-service="proBono" data-location="raleigh">
+    <h2>HSD Immigration LLC</h2>
+    <p><strong>Location:</strong> Raleigh, NC</p>
+    <p><strong>Languages spoken:</strong> English, Hindi</p>
+    <p><strong>Services:</strong> Pro bono legal services for immigration matters.</p>
+  </div>
+
+  <div class="lawyer" data-language="spanish" data-service="lowCost" data-location="charlotte">
+    <h2>ABC Immigration Attorneys</h2>
+    <p><strong>Location:</strong> Charlotte, NC</p>
+    <p><strong>Languages spoken:</strong> English, Spanish</p>
+    <p><strong>Services:</strong> Low-cost legal services for immigration cases.</p>
+  </div>
+
+  <div class="lawyer" data-language="hindi" data-service="proBono" data-location="durham">
+    <h2>XYZ Immigration Lawyers</h2>
+    <p><strong>Location:</strong> Durham, NC</p>
+    <p><strong>Languages spoken:</strong> English, Hindi</p>
+    <p><strong>Services:</strong> Pro bono services for immigration cases.</p>
+  </div>
+
+  <div class="lawyer" data-language="english" data-service="lowCost" data-location="raleigh">
+    <h2>DEF Immigration Law</h2>
+    <p><strong>Location:</strong> Raleigh, NC</p>
+    <p><strong>Languages spoken:</strong> English, Spanish</p>
+    <p><strong>Services:</strong> Low-cost immigration services.</p>
   </div>
 
   <script>
+    function filterLawyers(){
+        var language = lawyer.getElementById('data-language').toLowerCase();
+        var service = lawyer.getElementById('data-service').toLowerCase();
+        var location = lawyer.getElementById('data-location').toLowerCase();
+
+        var lawyers = document.querySelectorAll('.lawyer');
+
+        lawyers.forEach(function(lawyer) {
+        // Get the data attributes for each lawyer
+        var lawyerLanguage = lawyer.getAttribute('data-language').toLowerCase();
+        var lawyerService = lawyer.getAttribute('data-service').toLowerCase();
+        var lawyerLocation = lawyer.getAttribute('data-location').toLowerCase();
+
+        // Check if the lawyer matches the selected filters
+        if (
+          (languageFilter === 'all' || lawyerLanguage === languageFilter) &&
+          (serviceFilter === 'all' || lawyerService === serviceFilter) &&
+          (locationFilter === 'all' || lawyerLocation === locationFilter)
+        ) {
+          // Show the lawyer if they match
+          lawyer.style.display = '';
+        } else {
+          // Hide the lawyer if they don't match
+          lawyer.style.display = 'none';
+        }
+      });
+    }
+
+    //Add event listeners for each filter
+    document.getElementById('languageFilter').addEventListener('change', filterLawyers);
+    document.getElementById('serviceFilter').addEventListener('change', filterLawyers);
+    document.getElementById('locationFilter').addEventListener('change', filterLawyers);
+
+    // Reset filters function
     function resetFilters() {
-      // Reset filters to "all"
+      //Reset all dropdowns
       document.getElementById('languageFilter').value = 'all';
       document.getElementById('serviceFilter').value = 'all';
       document.getElementById('locationFilter').value = 'all';
 
-      // Update results display text
-      document.querySelector('div > span').innerText = '104 Lawyers Match Your Criteria';
+      //Show all
+      var lawyers = document.querySelectorAll('.lawyer');
+      lawyers.forEach(function(lawyer) {
+        lawyer.style.display = '';
+      });
     }
   </script>
-
-  <div class="lawyer">
-    <h2>HSD Immigration LLC</h2>
-    <p><strong>Location:</strong> Raleigh, NC</p>
-    <p><strong>Languages spoken:</strong> English, Hindi</p>
-    <p><strong>Services:</strong> HSD Immigration Lawyer offers expert legal representation in all immigration matters for companies and individuals.</p>
-    <p><strong>Email:</strong> <a href="info@hsdvisa.com/" target="_blank">info@hsdvisa.com</a></p>
-    <p><a href="https://hsdimmigrationlawyer.com/" target="_blank">Visit their website</a></p>
-  </div>
-
- <div class="lawyer">
-    <h2>HSD Immigration LLC</h2>
-    <p><strong>Location:</strong> Raleigh, NC</p>
-    <p><strong>Languages spoken:</strong> English, Hindi</p>
-    <p><strong>Services:</strong> HSD Immigration Lawyer offers expert legal representation in all immigration matters for companies and individuals.</p>
-    <p><strong>Email:</strong> <a href="info@hsdvisa.com/" target="_blank">info@hsdvisa.com</a></p>
-    <p><a href="https://hsdimmigrationlawyer.com/" target="_blank">Visit their website</a></p>
-  </div>
-
-  <div class="lawyer">
-    <h2>HSD Immigration LLC</h2>
-    <p><strong>Location:</strong> Raleigh, NC</p>
-    <p><strong>Languages spoken:</strong> English, Hindi</p>
-    <p><strong>Services:</strong> HSD Immigration Lawyer offers expert legal representation in all immigration matters for companies and individuals.</p>
-    <p><strong>Email:</strong> <a href="info@hsdvisa.com/" target="_blank">info@hsdvisa.com</a></p>
-    <p><a href="https://hsdimmigrationlawyer.com/" target="_blank">Visit their website</a></p>
-  </div>
-
- <div class="lawyer">
-    <h2>HSD Immigration LLC</h2>
-    <p><strong>Location:</strong> Raleigh, NC</p>
-    <p><strong>Languages spoken:</strong> English, Hindi</p>
-    <p><strong>Services:</strong> HSD Immigration Lawyer offers expert legal representation in all immigration matters for companies and individuals.</p>
-    <p><strong>Email:</strong> <a href="info@hsdvisa.com/" target="_blank">info@hsdvisa.com</a></p>
-    <p><a href="https://hsdimmigrationlawyer.com/" target="_blank">Visit their website</a></p>
-  </div>
-
- <div class="lawyer">
-    <h2>HSD Immigration LLC</h2>
-    <p><strong>Location:</strong> Raleigh, NC</p>
-    <p><strong>Languages spoken:</strong> English, Hindi</p>
-    <p><strong>Services:</strong> HSD Immigration Lawyer offers expert legal representation in all immigration matters for companies and individuals.</p>
-    <p><strong>Email:</strong> <a href="info@hsdvisa.com/" target="_blank">info@hsdvisa.com</a></p>
-    <p><a href="https://hsdimmigrationlawyer.com/" target="_blank">Visit their website</a></p>
-  </div>
 
 </body>
 

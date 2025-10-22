@@ -53,7 +53,7 @@
       }
 
       /* Bottom menu */
-      .bottom-menu {
+      .menu {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -65,11 +65,26 @@
         align-items: center;
         padding: 10px 0;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+      p {
+        color: black;
+      }
+      a {
+        color: black;
+      }
+      
       }
     </style>
   </head>
 
   <body>
+    <!-- Top Menu Bar -->
+    <div class="menu">
+      <p>App Icon</p>
+      <p>App Name</p>
+      <p>Language Select</p>
+    </div>
+
     <h1>Welcome to Immigration Helper!</h1>
 
     <p>
@@ -135,7 +150,7 @@
     </section>
 
     <!-- Bottom Menu Bar -->
-    <div class="bottom-menu">
+    <div class="menu">
       <a href="index.html">Home 🏠</a>
       <a href="lawyer.html">Lawyer Search 🤝</a>
       <a href="community.html">Organization Search 🔍</a>

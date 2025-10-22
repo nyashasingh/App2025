@@ -18,6 +18,20 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        background-color: #00559f;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+      }
   </style>
 </head>
 <body>
@@ -83,6 +97,14 @@
     <p><strong>Languages spoken:</strong> English, Spanish</p>
     <p><strong>Services:</strong> Low-cost immigration services.</p>
   </div>
+
+  <!-- Bottom Menu Bar -->
+    <div class="menu">
+      <a href="index.html">Home 🏠</a>
+      <a href="lawyer.html">Lawyer Search 🤝</a>
+      <a href="community.html">Organization Search 🔍</a>
+      <a href="faq.html">Frequently Asked Question ❓</a>
+    </div>
 
   <script>
     function filterLawyers() {

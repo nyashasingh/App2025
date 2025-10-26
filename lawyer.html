@@ -31,19 +31,15 @@
       max-width: 600px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-    }
-
-    .filters label {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .filters select {
-      width: 100%;
+      width: 30%;
       padding: 10px;
-      margin: 8px 0 20px 0;
+      margin: 8px 0;
       border-radius: 6px;
       border: 1px solid #ddd;
       font-size: 14px;
@@ -121,7 +117,6 @@
 
   <!-- Filter Section -->
   <div class="filters">
-    <label for="languageFilter">Language:</label>
     <select id="languageFilter">
       <option value="all">All Languages</option>
       <option value="english">English</option>
@@ -130,14 +125,12 @@
       <option value="arabic">Arabic</option>
     </select>
 
-    <label for="serviceFilter">Pro bono / Low-cost:</label>
     <select id="serviceFilter">
       <option value="all">Pro bono / Low-cost</option>
       <option value="proBono">Pro Bono</option>
       <option value="lowCost">Low-Cost</option>
     </select>
 
-    <label for="locationFilter">Location:</label>
     <select id="locationFilter">
       <option value="all">All Locations</option>
       <option value="raleigh">Raleigh, NC</option>

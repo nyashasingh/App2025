@@ -7,42 +7,77 @@
     <style>
       body {
         margin: 0;
-        padding-top: 1000px 0;
         background-color: #f4f4f4;
         text-align: center;
-        padding-bottom: 60px; /* Space for the fixed bottom menu */
+        padding-bottom: 60px; /* Space for bottom menu */
+        font-family: Arial, sans-serif;
       }
+
+      /* Header section styling */
+      .top-header {
+        background-color: #ffffff;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .top-header p {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #00559f;
+      }
+
+      /* Main title styling */
       h1 {
-        font-size: 24px;
-      }
-      h2, h3 {
-        font-size: 20px;
+        color: #00559f;
+        font-size: 28px;
         margin-top: 20px;
       }
+
+      h2, h3 {
+        font-size: 22px;
+        color: #333;
+        margin-top: 25px;
+      }
+
       p, ul {
         font-size: 16px;
         line-height: 1.5;
         margin-bottom: 20px;
+        color: #333;
       }
+
       ul {
         list-style-type: none;
         padding: 0;
       }
+
       a {
-        color: blue;
+        color: #00559f;
         text-decoration: none;
+        font-weight: bold;
       }
+
       a:hover {
         text-decoration: underline;
       }
+
       section {
         margin-top: 30px;
       }
 
-      /* Default */
+      /* Mobile-friendly adjustments */
       @media (max-width: 600px) {
+        .top-header {
+          flex-direction: column;
+          gap: 5px;
+        }
+
         h1 {
-          font-size: 20px;
+          font-size: 22px;
         }
         h2, h3 {
           font-size: 18px;
@@ -52,8 +87,8 @@
         }
       }
 
-    /* Bottom menu styling */
-    .menu {
+      /* Bottom menu styling */
+      .menu {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -65,43 +100,29 @@
         align-items: center;
         padding: 12px 0;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    }
+      }
 
-    .menu a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
+      .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
 
-    .menu a:hover {
-      background-color: #003f72;
-    }
-
-      .topnav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        font-size: 20px;
-        background-color: #00559f;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 2px 0;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 100;
+      .menu a:hover {
+        background-color: #003f72;
       }
     </style>
   </head>
 
   <body>
 
-    <div class="topnav">
-      <p>Icon</p>
-      <p>App Name</p>
-      <p>Language Select</p>
+    <!-- Top Section (non-fixed) -->
+    <div class="top-header">
+      <p>🕊️ Icon</p>
+      <p>Immigration Helper App</p>
+      <p>🌐 Language Select</p>
     </div>
 
     <h1>Welcome to Immigration Helper!</h1>
@@ -112,7 +133,6 @@
     </p>
 
     <h2>What Can You Find Here?</h2>
-
     <ul>
       <li>Check your visa eligibility</li>
       <li>Find an immigration lawyer</li>
@@ -121,9 +141,8 @@
     </ul>
 
     <h3>How to Navigate:</h3>
-
     <ul>
-      <li>Use the tabs at the top to explore different parts of the app</li>
+      <li>Use the sections below to explore different parts of the app</li>
       <li>If you need to switch your language, click the top-right corner</li>
       <li><a href="lawyer.html">Find a free immigration lawyer near you!</a></li>
       <li><a href="faq.html">Visit the FAQ page</a></li>
@@ -139,15 +158,13 @@
       </ul>
     </section>
 
-    <!-- Immigration FAQ -->
-    <section id="immigration faq">
+    <section id="immigration-faq">
       <h2>Immigration FAQ</h2>
       <ul>
         <li><strong>FAQ Section</strong> - Common questions about immigration forms and processes (e.g., “What do I need to apply for asylum?”).</li>
       </ul>
     </section>
 
-    <!-- Educational Resources -->
     <section id="educational-resources">
       <h2>Educational Resources</h2>
       <p>Learn about your rights and stay updated with immigration news.</p>
@@ -157,7 +174,6 @@
       </ul>
     </section>
 
-    <!-- Community Programs -->
     <section id="community-programs">
       <h2>Community Programs</h2>
       <p>Access local immigrant support programs like English classes, citizenship classes, and workforce development programs.</p>
@@ -173,8 +189,8 @@
       <a href="index.html">Home 🏠</a>
       <a href="lawyer.html">Lawyer Search 🤝</a>
       <a href="community.html">Organization Search 🔍</a>
-      <a href="faq.html">Frequently Asked Question ❓</a>
+      <a href="faq.html">Frequently Asked Questions ❓</a>
     </div>
-    
+
   </body>
 </html>

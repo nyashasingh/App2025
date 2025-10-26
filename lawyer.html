@@ -6,9 +6,71 @@
   <title>Lawyers in North Carolina</title>
 
   <style>
+    /* Basic page styling */
+    body {
+      margin: 0;
+        padding-top: 1000px 0;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding-bottom: 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00559f;
+      font-size: 36px;
+      margin-top: 30px;
+    }
+
+    /* Styling for the filter section */
+    .filters {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .filters label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .filters select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px 0;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      background-color: #fafafa;
+      transition: border-color 0.3s;
+    }
+
+    .filters select:hover {
+      border-color: #00559f;
+    }
+
+    .filters a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #00559f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .filters a:hover {
+      text-decoration: underline;
+    }
+
     /* Styling for the lawyer boxes */
     .lawyer {
-      background-color: #fff;
+      background-color: #ffffff;
       border: 5px solid #a20b0b;
       padding: 20px;
       margin-bottom: 20px;
@@ -17,21 +79,40 @@
       margin: 10px auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .lawyer:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Bottom menu styling */
     .menu {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        font-size: 20px;
+        font-size: 18px;
         background-color: #00559f;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 10px 0;
+        padding: 12px 0;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-      }
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu a:hover {
+      background-color: #003f72;
+    }
   </style>
 </head>
 <body>
@@ -39,7 +120,7 @@
   <h1>Lawyers in North Carolina</h1>
 
   <!-- Filter Section -->
-  <div>
+  <div class="filters">
     <label for="languageFilter">Language:</label>
     <select id="languageFilter">
       <option value="all">All Languages</option>
@@ -74,7 +155,7 @@
     <p><strong>Location:</strong> Raleigh, NC</p>
     <p><strong>Languages spoken:</strong> English, Hindi</p>
     <p><strong>Services:</strong> Pro bono legal services for immigration matters.</p>
-    <p><strong><a href="hsdlawyer.html">Click hear to contact!</a></strong></p>
+    <p><strong><a href="hsdlawyer.html">Click here to contact!</a></strong></p>
   </div>
 
   <div class="lawyer" data-language="spanish" data-service="lowCost" data-location="charlotte">
@@ -99,40 +180,33 @@
   </div>
 
   <!-- Bottom Menu Bar -->
-    <div class="menu">
-      <a href="index.html">Home 🏠</a>
-      <a href="lawyer.html">Lawyer Search 🤝</a>
-      <a href="community.html">Organization Search 🔍</a>
-      <a href="faq.html">Frequently Asked Question ❓</a>
-    </div>
+  <div class="menu">
+    <a href="index.html">Home 🏠</a>
+    <a href="lawyer.html">Lawyer Search 🤝</a>
+    <a href="community.html">Organization Search 🔍</a>
+    <a href="faq.html">Frequently Asked Questions ❓</a>
+  </div>
 
   <script>
     function filterLawyers() {
-        // Get the selected filter values
         var languageFilter = document.getElementById('languageFilter').value.toLowerCase();
         var serviceFilter = document.getElementById('serviceFilter').value.toLowerCase();
         var locationFilter = document.getElementById('locationFilter').value.toLowerCase();
 
-        // Get all lawyer elements
         var lawyers = document.querySelectorAll('.lawyer');
 
-        // Loop through each lawyer and check if they match the selected filters
         lawyers.forEach(function(lawyer) {
-            // Get the data attributes for each lawyer
             var lawyerLanguage = lawyer.getAttribute('data-language').toLowerCase();
             var lawyerService = lawyer.getAttribute('data-service').toLowerCase();
             var lawyerLocation = lawyer.getAttribute('data-location').toLowerCase();
 
-            // Check if the lawyer matches the selected filters
             if (
                 (languageFilter === 'all' || lawyerLanguage === languageFilter) &&
                 (serviceFilter === 'all' || lawyerService === serviceFilter) &&
                 (locationFilter === 'all' || lawyerLocation === locationFilter)
             ) {
-                // Show the lawyer if they match the filters
                 lawyer.style.display = '';
             } else {
-                // Hide the lawyer if they don't match the filters
                 lawyer.style.display = 'none';
             }
         });
@@ -145,12 +219,10 @@
 
     // Reset filters function
     function resetFilters() {
-        // Reset all dropdowns
         document.getElementById('languageFilter').value = 'all';
         document.getElementById('serviceFilter').value = 'all';
         document.getElementById('locationFilter').value = 'all';
 
-        // Show all lawyers
         var lawyers = document.querySelectorAll('.lawyer');
         lawyers.forEach(function(lawyer) {
             lawyer.style.display = '';

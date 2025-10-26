@@ -49,7 +49,7 @@
         .faq-item p {
             padding: 0 20px;
             margin-top: 10px;
-            display: none;
+            display: none;  /* Hide answers by default */
             color: #333;
         }
 
@@ -103,6 +103,7 @@
         </div>
 
         <!-- Add more FAQ items here -->
+
     </section>
 
     <!-- Bottom Menu Bar -->
@@ -118,10 +119,10 @@
         function toggleAnswer(element) {
             const p = element.nextElementSibling;
             // Toggle the display of the answer paragraph
-            if (p.style.display === "block") {
-                p.style.display = "none";
-            } else {
+            if (p.style.display === "none" || p.style.display === "") {
                 p.style.display = "block";
+            } else {
+                p.style.display = "none";
             }
         }
     </script>

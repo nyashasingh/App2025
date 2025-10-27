@@ -9,25 +9,27 @@
             margin: 0;
             padding-top: 50px;
             background-color: #f4f4f4;
-            text-align: left;  /* Left align all text except the menu */
             font-family: Arial, sans-serif;
         }
 
-        /* FAQ Section Styling */
-        #faq {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            text-align: left; /* Ensure the FAQ content is left-aligned */
-        }
-
+        /* Page Title Styling */
         h2 {
             text-align: center;
             color: #00559f;
             font-size: 36px;
-            margin-top: 30px;
+            margin: 30px 0 20px 0; /* top 30px, bottom 20px */
+        }
+
+        /* FAQ Section Styling */
+        #faq {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto 30px auto; /* center horizontally, bottom margin */
+            padding: 20px;
+            text-align: left;
         }
 
         .faq-item {
@@ -91,32 +93,16 @@
 
         /* Mobile View */
         @media (max-width: 480px) {
-            h1 {
+            h2 {
                 font-size: 22px;
             }
 
-            h2, h3 {
+            h3 {
                 font-size: 18px;
             }
 
             p, ul {
                 font-size: 14px;
-            }
-
-            .top-header {
-                flex-direction: row;
-                padding: 10px 0;
-            }
-
-            .top-header p {
-                font-size: 16px;
-                margin-bottom: 5px;
-            }
-
-            #language {
-                font-size: 14px;
-                padding: 4px;
-                margin-top: 8px;
             }
 
             .menu {
@@ -137,10 +123,11 @@
     </style>
 </head>
 <body>
+    <!-- Page Title -->
+    <h2>Immigration Frequently Asked Questions (FAQ)</h2>
+
     <!-- FAQ Section -->
     <section id="faq">
-        <h2>Immigration Frequently Asked Questions (FAQ)</h2>
-
         <!-- FAQ Item: What is a visa? -->
         <div class="faq-item">
             <h3 onclick="toggleAnswer(this)">What is a visa?</h3>
@@ -196,7 +183,6 @@
                 <li><strong>K</strong>: For fiancé(e)s of U.S. citizens to come to get married in the U.S.</li>
             </ul>
         </div>
-
     </section>
 
     <!-- Bottom Menu Bar -->
@@ -210,13 +196,8 @@
     <script>
         // Toggle the visibility of the answer when clicking the question
         function toggleAnswer(element) {
-            const p = element.nextElementSibling;
-            // Toggle the display of the answer paragraph
-            if (p.style.display === "none" || p.style.display === "") {
-                p.style.display = "block";
-            } else {
-                p.style.display = "none";
-            }
+            const content = element.nextElementSibling;
+            content.style.display = (content.style.display === "block") ? "none" : "block";
         }
     </script>
 </body>

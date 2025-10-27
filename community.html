@@ -241,25 +241,28 @@
 
   <script>
     function filterPrograms() {
-        var serviceFilter = document.getElementById('serviceFilter').value.toLowerCase();
-        var locationFilter = document.getElementById('locationFilter').value.toLowerCase();
+    var serviceFilter = document.getElementById('serviceFilter').value.toLowerCase();
+    var locationFilter = document.getElementById('locationFilter').value.toLowerCase();
 
-        var programs = document.querySelectorAll('.program');
+    var programs = document.querySelectorAll('.program');
 
-        programs.forEach(function(program) {
-            var programService = program.getAttribute('data-service').toLowerCase();
-            var programLocation = program.getAttribute('data-location').toLowerCase();
+    programs.forEach(function(program) {
+        var programService = program.getAttribute('data-service').toLowerCase();
+        var programLocation = program.getAttribute('data-location').toLowerCase();
 
-            if (
-                (serviceFilter === 'all' || programService === serviceFilter) &&
-                (locationFilter === 'all' || programLocation === locationFilter)
-            ) {
-                program.style.display = '';
-            } else {
-                program.style.display = 'none';
-            }
-        });
-    }
+        var locationMatches =
+            locationFilter === 'all' || 
+            programLocation === 'statewide' || 
+            programLocation === locationFilter;
+
+        var serviceMatches = serviceFilter === 'all' || programService === serviceFilter;
+
+        if (serviceMatches && locationMatches) {
+            program.style.display = '';
+        } else {
+            program.style.display = 'none';
+        }
+    })
 
     // Add event listeners for each filter dropdown
     document.getElementById('serviceFilter').addEventListener('change', filterPrograms);

@@ -22,7 +22,7 @@
       margin-top: 30px;
     }
 
-    /* Styling for the filter section */
+    /* Filter Section Styling (matches Lawyers page) */
     .filters {
       background-color: #ffffff;
       padding: 20px;
@@ -32,6 +32,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       display: flex;
+      flex-wrap: wrap; /* responsive wrapping */
       justify-content: space-between;
       align-items: center;
     }
@@ -44,6 +45,9 @@
       border: 1px solid #ddd;
       font-size: 14px;
       background-color: #fafafa;
+      font-family: Arial, sans-serif;
+      color: #00559f;
+      font-weight: bold;
       transition: border-color 0.3s;
     }
 
@@ -58,13 +62,14 @@
       color: #00559f;
       font-weight: bold;
       text-decoration: none;
+      font-family: Arial, sans-serif;
     }
 
     .filters a:hover {
       text-decoration: underline;
     }
 
-    /* Styling for the program boxes */
+    /* Program Boxes */
     .program {
       background-color: #ffffff;
       border: 5px solid #a20b0b;
@@ -83,73 +88,76 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
-      /* Bottom menu styling */
-      .menu {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        font-size: 18px;
-        background-color: #00559f;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 12px 0;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .menu a {
-        color: white;
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 8px;
-        transition: background-color 0.3s ease;
-        font-weight: bold;
-      }
-
-      .menu a:hover {
-        background-color: #003f72;
-      }
-
-      @media (max-width: 480px) {
-    h1 {
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    .filters {
-      padding: 10px;
-      width: 100%;
-    }
-
-    .filters select {
-      width: 100%;
-      font-size: 14px;
-    }
-
-    .program {
-      width: 100%;
-      max-width: none;
-      margin: 10px 0;
-    }
-
+    /* Bottom menu styling */
     .menu {
-      font-size: 14px;
-      padding: 10px 0;
-      flex-direction: row;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 18px;
+      background-color: #00559f;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .menu a {
-      padding: 8px;
-      margin-bottom: 5px;
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
     }
-    body {
-      padding-bottom: 80px;
+
+    .menu a:hover {
+      background-color: #003f72;
     }
-  }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .filters {
+        padding: 10px;
+        width: 100%;
+        flex-direction: column; /* stack items vertically */
+        align-items: stretch;
+      }
+
+      .filters select {
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .program {
+        width: 100%;
+        max-width: none;
+        margin: 10px 0;
+      }
+
+      .menu {
+        font-size: 14px;
+        padding: 10px 0;
+        flex-direction: row;
+      }
+
+      .menu a {
+        padding: 8px;
+        margin-bottom: 5px;
+      }
+
+      body {
+        padding-bottom: 80px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -224,12 +232,12 @@
   </div>
 
   <!-- Bottom Menu Bar -->
-    <div class="menu">
-      <a href="index.html">Home 🏠</a>
-      <a href="lawyer.html">Lawyer 🤝</a>
-      <a href="community.html">Community🔍</a>
-      <a href="faq.html">FAQ ❓</a>
-    </div>
+  <div class="menu">
+    <a href="index.html">Home 🏠</a>
+    <a href="lawyer.html">Lawyer 🤝</a>
+    <a href="community.html">Community🔍</a>
+    <a href="faq.html">FAQ ❓</a>
+  </div>
 
   <script>
     function filterPrograms() {

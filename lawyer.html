@@ -30,49 +30,50 @@
 
     /* Filter Section Styling */
     .filters {
-      background-color: #ffffff;
-      padding: 20px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap; /* allow responsive wrapping */
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .filters select {
-      width: 30%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      font-size: 14px;
-      background-color: #fafafa;
-      color: #00559f;
-      font-weight: bold;
-      transition: border-color 0.3s;
-    }
+  .filters select {
+    width: 30%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+    color: #00559f;
+    font-weight: bold;
+    transition: border-color 0.3s;
+  }
 
-    .filters select:hover {
-      border-color: #00559f;
-    }
+  .filters select:hover {
+    border-color: #00559f;
+  }
 
-    .filters a {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      color: #00559f;
-      font-weight: bold;
-      text-decoration: none;
-    }
+  .filters a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #00559f;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+  }
 
-    .filters a:hover {
-      text-decoration: underline;
-    }
-
+  .filters a:hover {
+    text-decoration: underline;
+  }
     /* Lawyer box styling */
     .lawyer {
       background-color: #ffffff;
@@ -130,15 +131,16 @@
       }
 
       .filters {
-        padding: 10px;
-        width: 100%;
+      padding: 10px;
+      width: 100%;
+      flex-direction: column; /* stack items vertically on mobile */
+      align-items: stretch;
       }
 
       .filters select {
-        width: 100%;
-        font-size: 14px;
+      width: 100%;
+      margin: 5px 0;
       }
-
       .lawyer {
         width: 100%;
         max-width: none;

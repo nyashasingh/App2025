@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 40px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #00559f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #003f72;
+    }
+  </style>
+  <script>
+    // Function to get query parameters
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Prefill lawyer name on page load
+    window.onload = function() {
+      const lawyerName = getQueryParam('lawyerName');
+      if (lawyerName) {
+        document.getElementById('lawyerNameDisplay').innerText = decodeURIComponent(lawyerName);
+        document.getElementById('lawyerId').value = getQueryParam('lawyerId');
+        document.getElementById('lawyerName').value = decodeURIComponent(lawyerName);
+      }
+    }
+
+    // Handle form submission
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+        lawyerId: form.lawyerId.value,
+        lawyerName: form.lawyerName.value
+      };
+
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbwRanxQ8AKx8L1vNuKmrhog7AZIRGuuvB10maYSU5n0Hm5WmwZh4eppYMq-kUZ2661ZRg/exec';
+      fetch(webAppUrl, {
+        method: 'POST',
+        body: new URLSearchParams(formData),
+      })
+      .then(response => response.text())
+      .then(() => {
+        alert('Your message has been sent!');
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again.');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Contact Us</h1>
+  <p><strong>Lawyer Selected:</strong> <span id="lawyerNameDisplay">None selected</span></p>
+
+  <form id="contactForm" onsubmit="handleSubmit(event)">
+    <input type="hidden" id="lawyerId" name="lawyerId">
+    <input type="hidden" id="lawyerName" name="lawyerName">
+
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

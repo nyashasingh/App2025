@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,11 +9,10 @@
     /* Basic page styling */
     body {
       margin: 0;
-      padding-top: 1000px 0;
       background-color: #f4f4f4;
       text-align: center;
       padding-bottom: 60px;
-      font-family: Arial, sans-serif; /* Consistent font family */
+      font-family: Arial, sans-serif;
     }
 
     h1 {
@@ -29,7 +28,7 @@
       font-weight: bold;
     }
 
-    /* Styling for the filter section */
+    /* Filter Section Styling */
     .filters {
       background-color: #ffffff;
       padding: 20px;
@@ -39,6 +38,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
     }
@@ -51,8 +51,7 @@
       border: 1px solid #ddd;
       font-size: 14px;
       background-color: #fafafa;
-      font-family: Arial, sans-serif; /* Ensuring consistent font */
-      color: #00559f; /* Consistent font color */
+      color: #00559f;
       font-weight: bold;
       transition: border-color 0.3s;
     }
@@ -68,14 +67,13 @@
       color: #00559f;
       font-weight: bold;
       text-decoration: none;
-      font-family: Arial, sans-serif; /* Ensuring consistent font */
     }
 
     .filters a:hover {
       text-decoration: underline;
     }
 
-    /* Styling for the lawyer boxes */
+    /* Lawyer box styling */
     .lawyer {
       background-color: #ffffff;
       border: 5px solid #a20b0b;
@@ -87,7 +85,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      font-family: Arial, sans-serif; /* Ensuring consistent font */
     }
 
     .lawyer:hover {
@@ -95,73 +92,74 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
-      /* Bottom menu styling */
-      .menu {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        font-size: 18px;
-        background-color: #00559f;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 12px 0;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .menu a {
-        color: white;
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 8px;
-        transition: background-color 0.3s ease;
-        font-weight: bold;
-      }
-
-      .menu a:hover {
-        background-color: #003f72;
-      }
-
-      @media (max-width: 480px) {
-    h1 {
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    .filters {
-      padding: 10px;
-      width: 100%;
-    }
-
-    .filters select {
-      width: 100%;
-      font-size: 14px;
-    }
-
-    .lawyer {
-      width: 100%;
-      max-width: none;
-      margin: 10px 0;
-    }
-
+    /* Bottom menu styling */
     .menu {
-      font-size: 14px;
-      padding: 10px 0;
-      flex-direction: row;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 18px;
+      background-color: #00559f;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .menu a {
-      padding: 8px;
-      margin-bottom: 5px;
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
     }
-    body {
-      padding-bottom: 80px;
+
+    .menu a:hover {
+      background-color: #003f72;
     }
-  }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .filters {
+        padding: 10px;
+        width: 100%;
+      }
+
+      .filters select {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .lawyer {
+        width: 100%;
+        max-width: none;
+        margin: 10px 0;
+      }
+
+      .menu {
+        font-size: 14px;
+        padding: 10px 0;
+        flex-direction: row;
+      }
+
+      .menu a {
+        padding: 8px;
+        margin-bottom: 5px;
+      }
+
+      body {
+        padding-bottom: 80px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -196,85 +194,92 @@
   </div>
 
   <!-- Lawyer Results Section -->
-  <div class="lawyer" data-language="english" data-service="proBono" data-location="raleigh">
+  <div class="lawyer" 
+       data-language="english,hindi" 
+       data-service="proBono" 
+       data-location="raleigh">
     <h2>HSD Immigration LLC</h2>
     <p><strong>Location:</strong> Raleigh, NC</p>
     <p><strong>Languages spoken:</strong> English, Hindi</p>
     <p><strong>Services:</strong> Pro bono legal services for immigration matters.</p>
-    <p><strong><a href="hsdlawyer.html">Click here to contact!</a></strong></p>
+    <p><strong><a href="contact.html?lawyer=HSD%20Immigration%20LLC">Click here to contact!</a></strong></p>
   </div>
 
-  <div class="lawyer" data-language="spanish" data-service="lowCost" data-location="charlotte">
+  <div class="lawyer" 
+       data-language="english,spanish" 
+       data-service="lowCost,proBono" 
+       data-location="charlotte">
     <h2>ABC Immigration Attorneys</h2>
     <p><strong>Location:</strong> Charlotte, NC</p>
     <p><strong>Languages spoken:</strong> English, Spanish</p>
-    <p><strong>Services:</strong> Low-cost legal services for immigration cases.</p>
+    <p><strong>Services:</strong> Low-cost and pro bono legal services for immigration cases.</p>
+    <p><strong><a href="contact.html?lawyer=ABC%20Immigration%20Attorneys">Click here to contact!</a></strong></p>
   </div>
 
-  <div class="lawyer" data-language="hindi" data-service="proBono" data-location="durham">
+  <div class="lawyer" 
+       data-language="english,hindi" 
+       data-service="proBono" 
+       data-location="durham">
     <h2>XYZ Immigration Lawyers</h2>
     <p><strong>Location:</strong> Durham, NC</p>
     <p><strong>Languages spoken:</strong> English, Hindi</p>
     <p><strong>Services:</strong> Pro bono services for immigration cases.</p>
+    <p><strong><a href="contact.html?lawyer=XYZ%20Immigration%20Lawyers">Click here to contact!</a></strong></p>
   </div>
 
-  <div class="lawyer" data-language="english" data-service="lowCost" data-location="raleigh">
+  <div class="lawyer" 
+       data-language="english,spanish" 
+       data-service="lowCost" 
+       data-location="raleigh">
     <h2>DEF Immigration Law</h2>
     <p><strong>Location:</strong> Raleigh, NC</p>
     <p><strong>Languages spoken:</strong> English, Spanish</p>
     <p><strong>Services:</strong> Low-cost immigration services.</p>
+    <p><strong><a href="contact.html?lawyer=DEF%20Immigration%20Law">Click here to contact!</a></strong></p>
   </div>
 
   <!-- Bottom Menu Bar -->
-    <div class="menu">
-      <a href="index.html">Home 🏠</a>
-      <a href="lawyer.html">Lawyer 🤝</a>
-      <a href="community.html">Community🔍</a>
-      <a href="faq.html">FAQ ❓</a>
-    </div>
+  <div class="menu">
+    <a href="index.html">Home 🏠</a>
+    <a href="lawyer.html">Lawyer 🤝</a>
+    <a href="community.html">Community 🔍</a>
+    <a href="faq.html">FAQ ❓</a>
+  </div>
 
   <script>
     function filterLawyers() {
-        var languageFilter = document.getElementById('languageFilter').value.toLowerCase();
-        var serviceFilter = document.getElementById('serviceFilter').value.toLowerCase();
-        var locationFilter = document.getElementById('locationFilter').value.toLowerCase();
+      const languageFilter = document.getElementById('languageFilter').value.toLowerCase();
+      const serviceFilter = document.getElementById('serviceFilter').value.toLowerCase();
+      const locationFilter = document.getElementById('locationFilter').value.toLowerCase();
 
-        var lawyers = document.querySelectorAll('.lawyer');
+      const lawyers = document.querySelectorAll('.lawyer');
 
-        lawyers.forEach(function(lawyer) {
-            var lawyerLanguage = lawyer.getAttribute('data-language').toLowerCase();
-            var lawyerService = lawyer.getAttribute('data-service').toLowerCase();
-            var lawyerLocation = lawyer.getAttribute('data-location').toLowerCase();
+      lawyers.forEach(lawyer => {
+        const lawyerLanguages = lawyer.getAttribute('data-language').toLowerCase().split(',').map(s => s.trim());
+        const lawyerServices = lawyer.getAttribute('data-service').toLowerCase().split(',').map(s => s.trim());
+        const lawyerLocation = lawyer.getAttribute('data-location').toLowerCase();
 
-            if (
-                (languageFilter === 'all' || lawyerLanguage === languageFilter) &&
-                (serviceFilter === 'all' || lawyerService === serviceFilter) &&
-                (locationFilter === 'all' || lawyerLocation === locationFilter)
-            ) {
-                lawyer.style.display = '';
-            } else {
-                lawyer.style.display = 'none';
-            }
-        });
+        const matchesLanguage = languageFilter === 'all' || lawyerLanguages.includes(languageFilter);
+        const matchesService = serviceFilter === 'all' || lawyerServices.includes(serviceFilter);
+        const matchesLocation = locationFilter === 'all' || lawyerLocation === locationFilter;
+
+        lawyer.style.display = (matchesLanguage && matchesService && matchesLocation) ? '' : 'none';
+      });
     }
 
-    // Add event listeners for each filter dropdown
+    // Event listeners for filters
     document.getElementById('languageFilter').addEventListener('change', filterLawyers);
     document.getElementById('serviceFilter').addEventListener('change', filterLawyers);
     document.getElementById('locationFilter').addEventListener('change', filterLawyers);
 
     // Reset filters function
     function resetFilters() {
-        document.getElementById('languageFilter').value = 'all';
-        document.getElementById('serviceFilter').value = 'all';
-        document.getElementById('locationFilter').value = 'all';
+      document.getElementById('languageFilter').value = 'all';
+      document.getElementById('serviceFilter').value = 'all';
+      document.getElementById('locationFilter').value = 'all';
 
-        var lawyers = document.querySelectorAll('.lawyer');
-        lawyers.forEach(function(lawyer) {
-            lawyer.style.display = '';
-        });
+      document.querySelectorAll('.lawyer').forEach(lawyer => lawyer.style.display = '');
     }
   </script>
-
 </body>
 </html>

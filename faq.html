@@ -9,7 +9,7 @@
             margin: 0;
             padding-top: 50px;
             background-color: #f4f4f4;
-            text-align: left;
+            text-align: left;  /* Left align all text except the menu */
             font-family: Arial, sans-serif;
         }
 
@@ -20,6 +20,7 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Ensure the FAQ content is left-aligned */
         }
 
         h2 {
@@ -46,11 +47,15 @@
             color: white;
         }
 
-        .faq-item p {
+        .faq-item p, .faq-item ul {
             padding: 0 20px;
             margin-top: 10px;
             display: none;  /* Hide answers by default */
             color: #333;
+        }
+
+        .visa-types {
+            padding-left: 20px;
         }
 
         /* Bottom Menu Styling */
@@ -62,10 +67,11 @@
             font-size: 18px;
             background-color: #00559f;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             padding: 12px 0;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .menu a {
@@ -80,49 +86,52 @@
         .menu a:hover {
             background-color: #003f72;
         }
-    @media (max-width: 480px) {
-    h1 {
-      font-size: 22px;
-    }
 
-    h2, h3 {
-      font-size: 18px;
-    }
+        /* Mobile View */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
 
-    p, ul {
-      font-size: 14px;
-    }
+            h2, h3 {
+                font-size: 18px;
+            }
 
-    .top-header {
-      flex-direction: row;
-      padding: 10px 0;
-    }
+            p, ul {
+                font-size: 14px;
+            }
 
-    .top-header p {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
+            .top-header {
+                flex-direction: row;
+                padding: 10px 0;
+            }
 
-    #language {
-      font-size: 14px;
-      padding: 4px;
-      margin-top: 8px;
-    }
+            .top-header p {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
 
-    .menu {
-      font-size: 14px;
-      padding: 10px 0;
-      flex-direction: row;
-    }
+            #language {
+                font-size: 14px;
+                padding: 4px;
+                margin-top: 8px;
+            }
 
-    .menu a {
-      padding: 6px 10px;
-      margin-bottom: 5px;
-    }
-    body {
-      padding-bottom: 80px;
-    }
-  }
+            .menu {
+                font-size: 14px;
+                padding: 10px 0;
+                flex-direction: row;
+            }
+
+            .menu a {
+                padding: 6px 10px;
+                margin-bottom: 5px;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,9 +170,11 @@
                 <li><strong>DV (Diversity Visa)</strong>: A lottery for individuals from countries with few immigrants to the U.S.</li>
                 <li><strong>SIV (Special Immigrant Visa)</strong>: For religious workers or individuals who worked for the U.S. government in Iraq/Afghanistan.</li>
             </ul>
+        </div>
+
         <!-- FAQ Item: What are the nonimmigrant visa types? -->
         <div class="faq-item">
-            <h3 onclick="toggleAnswer(this)">What are the nonimmigrant visa typesmad?</h3>
+            <h3 onclick="toggleAnswer(this)">What are the nonimmigrant visa types?</h3>
             <ul class="visa-types">
                 <li><strong>B</strong>: For business (B-1), tourism (B-2), or both.</li>
                 <li><strong>F</strong>: For students studying at a school</li>
@@ -175,16 +186,14 @@
                         <li>H-2A/H-2B: For farm workers and other temporary workers</li>
                     </ul>
                 </li>
-                <li><strong>L</strong>: For workers moving to the U.S. within the same compan.</li>
+                <li><strong>L</strong>: For workers moving to the U.S. within the same company.</li>
                 <li><strong>O</strong>: For people with extraordinary skills or talents</li>
                 <li><strong>P</strong>: For athletes, artists, and entertainers</li>
                 <li><strong>R</strong>: For religious workers</li>
-                <li><strong>I</strong>: For foreign media representative.</li>
+                <li><strong>I</strong>: For foreign media representatives.</li>
                 <li><strong>K</strong>: For fiancé(e)s of U.S. citizens to come to get married in the U.S.</li>
             </ul>
         </div>
-
-        <!-- Add more FAQ items here -->
 
     </section>
 

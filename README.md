@@ -66,4 +66,5 @@ This helps users connect with groups that can ease their transition into life in
 
 With **NorthStar Immigration**, we’re lighting the way through the immigration journey, guiding and empowering users every step of the way.  
 
-Like the North Star in the night sky, the app is a constant, reliable guide — helping immigrants navigate challenges and connect with the support they need to build stability and opportunity.
+
+Like the North Star in the night sky, the app is a constant, reliable guide, helping immigrants navigate challenges and connect with the support they need to build stability and opportunity.
